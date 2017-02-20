@@ -1,0 +1,65 @@
+/*
+* @Author: zhengwei
+* @Date:   2016-11-21 09:31:23
+* @Last Modified by:   zhengwei
+* @Last Modified time: 2016-11-21 09:34:22
+*/
+
+.layout {
+    .carousel-indicators {
+        left: 100%;
+        bottom: -5px;
+        width: 30%;
+    }
+    .carousel-caption {
+        bottom: 0px;
+        padding: 10px 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        left: 0;
+        text-align: left;
+        padding-left: 20px;
+    }
+}
+
+// 主体动漫区域
+#cartoon {
+    >.nav-tabs {
+        >li {
+            width: 25%;
+            >a {
+                border-radius: 0;
+                border: 0;
+                text-align: center;
+            }
+            &.active {
+                border-bottom: 2px solid #e92322;
+            }
+        }
+    }
+    >.tab-content {
+        >.tab-pane {
+            >ul {
+                >li {
+                    padding: 5px;
+                    >a {
+                        display: block;
+                        position: relative;
+                        >img {
+                            width: 100%;
+                        }
+                        >p {
+                            position: absolute;
+                            height: 40px;
+                            line-height: 40px;
+                            text-align: center;
+                            background-color: rgba(0, 0, 0, 0.5);
+                            bottom: 0;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

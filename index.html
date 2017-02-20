@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- 先引入第三方的框架 再引入自己的 -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!-- 引入less文件的时候 rel 要 等于 stylesheet/less -->
+    <link rel="stylesheet/less" href="css/base.less">
+    <link rel="stylesheet/less" href="css/index.less">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 编译less文件 -->
+    <!-- 引入less的临时编译js文件 这个文件是用来临时将less代码转换成CSS代码的 -->
+    <!-- 一定要放到less文件后面引入 才能编译 -->
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 主页的容器 -->
+    <div class="layout">
+        <!-- 主页容器的遮罩层 -->
+        <div class="mask"></div>
+        <!-- 主页头部区域 -->
+        <header id="header">
+            <i class="icon-menu"></i>
+            <h4>红旅动漫</h4>
+            <i class="icon-search"></i>
+        </header>
+        <!-- 主页轮播图容器 -->
+        <section id="slide">
+            <!-- 轮播图容器 -->
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- 小圆点 指示器 -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+                <!-- 轮播图的轮播项 -->
+                <div class="carousel-inner" role="listbox">
+                   
+                </div>
+            </div>
+        </section>
+        <!-- 主页的动漫tab栏容器 -->
+        <section id="cartoon">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <!-- data-type="1" 绑定和DOM强相关的数据 这个data-type就是对应这个标题的type -->
+                <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab" data-type="1">新增连载</a></li>
+                <li role="presentation"><a href="#profile" role="tab" data-toggle="tab" data-type="2">新增完结</a></li>
+                <li role="presentation"><a href="#messages" role="tab" data-toggle="tab" data-type="3">推送连载</a></li>
+                <li role="presentation"><a href="#settings" role="tab" data-toggle="tab" data-type="4">推荐完结</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                   
+                </div>
+                <div role="tabpanel" class="tab-pane" id="profile">
+                    
+                </div>
+                <div role="tabpanel" class="tab-pane" id="messages">
+                    
+                </div>
+                <div role="tabpanel" class="tab-pane" id="settings">
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- 左侧的导航菜单 -->
+    <div class="left-menu">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a href="#"><img src="http://hldm.ittun.com/images/logo.PNG" alt="" style="width:100%;"></a>
+            </li>
+            <li class="list-group-item"><a href="serial.html">连载动漫</a></li>
+            <li class="list-group-item"><a href="features.html">专题列表</a></li>
+            <li class="list-group-item"><a href="#">关于</a></li>
+        </ul>
+    </div>
+    <!-- 轮播图的每一张图片的模板 -->
+    <!--   <script type="text/html" id="slideTmp">
+    		{{each list as value i}}
+	        <div class="item">
+	            <img src="{{value.img}}" alt="...">
+	            <div class="carousel-caption">
+	                {{value.title}}
+	            </div>
+	        </div>
+        {{/each}}
+    </script> -->
+    <!-- 轮播图的每一张图片的模板 -->
+    <script type="text/html" id="slideTmp">
+        <% for(var i = 0; i < list.length;i++){%>
+            <div class="item">
+                <img src="<%=list[i].img%>" alt="...">
+                <div class="carousel-caption">
+                    <%= list[i].title %>
+                </div>
+            </div>
+            <%}%>
+    </script>
+    <!-- 轮播图的每一张图片的模板 -->
+    <!--   <script type="text/html" id="cartoonListTmp">
+        <% for(var i = 0; i < list.length;i++){%>
+            <li class="col-xs-6">
+                <a href="">
+                    <img src="images/cp1.jpg" alt="">
+                    <p>连载12集</p>
+                </a>
+            </li>
+            <%}%>
+    </script> -->
+    <!-- 动漫列表id -->
+    <script type="text/html" id="cartoonListTmp">
+        <ul>
+            <% for(var i = 0; i < list.length;i++){%>
+                <li class="col-xs-6">
+                    <a href="">
+                        <img src="<%= list[i].img %>" alt="">
+                        <p><%= list[i].name %></p>
+                    </a>
+                </li>
+                <%}%>
+        </ul>
+    </script>
+    <!-- 引入bootstrap的js的时候依赖jquery所以先引入jquery -->
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <!-- 简洁语法的包 -->
+    <!-- <script src="js/template.js"></script> -->
+    <!-- 原生语法的包 -->
+    <script src="js/template-native.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

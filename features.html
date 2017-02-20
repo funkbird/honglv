@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- 先引入第三方的框架 再引入自己的 -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!-- 引入less文件的时候 rel 要 等于 stylesheet/less -->
+    <link rel="stylesheet/less" href="css/base.less">
+    <link rel="stylesheet/less" href="css/features.less">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 编译less文件 -->
+    <!-- 引入less的临时编译js文件 这个文件是用来临时将less代码转换成CSS代码的 -->
+    <!-- 一定要放到less文件后面引入 才能编译 -->
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 主页的容器 -->
+    <div class="layout">
+        <!-- 主页头部区域 -->
+        <header id="header">
+            <i class="icon-back"></i>
+            <h4>专题列表</h4>
+        </header>
+        <!-- 专题列表 -->
+        <section id="features">
+            
+        </section>
+    </div>
+    <script type="text/html" id="featuresListTmp">
+        <ul>
+            {{each list as value i}}
+            <li>
+                <a href="{{value.url}}">
+                    <img src="{{value.img}}" alt="">
+                    <p>{{value.title}}</p>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </script>
+    <!-- 引入bootstrap的js的时候依赖jquery所以先引入jquery -->
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <!-- 简洁语法的包 -->
+    <script src="js/template.js"></script>
+    <!-- 原生语法的包 -->
+    <!-- <script src="js/template-native.js"></script> -->
+    <script src="js/features.js"></script>
+</body>
+
+</html>

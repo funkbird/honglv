@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- 先引入第三方的框架 再引入自己的 -->
+    <!-- <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"> -->
+    <!-- 引入less文件的时候 rel 要 等于 stylesheet/less -->
+    <link rel="stylesheet/less" href="css/base.less">
+    <link rel="stylesheet/less" href="css/index-native.less">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 编译less文件 -->
+    <!-- 引入less的临时编译js文件 这个文件是用来临时将less代码转换成CSS代码的 -->
+    <!-- 一定要放到less文件后面引入 才能编译 -->
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 主页的容器 -->
+    <div class="layout">
+        <!-- 主页容器的遮罩层 -->
+        <div class="mask"></div>
+        <!-- 主页头部区域 -->
+        <header id="header">
+            <i class="icon-menu"></i>
+            <h4>红旅动漫</h4>
+            <i class="icon-search"></i>
+        </header>
+        <!-- 主页轮播图容器 -->
+        <section id="slide">
+            <!-- 轮播图容器 -->
+            <ul class="slide-ul clearfix">
+                <li>
+                    <a href="#"><img src="images/l2.jpg" alt="">
+                        <p class="caption">轮播图的标题2</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l1.jpg" alt="">
+                        <p class="caption">轮播图的标题1</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l2.jpg" alt="">
+                        <p class="caption">轮播图的标题2</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l1.jpg" alt="">
+                        <p class="caption">轮播图的标题1</p>
+                    </a>
+                </li>
+            </ul>
+            <!-- 小圆点容器 -->
+            <ul class="points">
+                <li class="active"></li>
+                <li></li>
+            </ul>
+        </section>
+        <!-- 主页的动漫tab栏容器 -->
+        <section id="cartoon">
+            <!-- tab栏的标题 -->
+            <ul class="clearfix">
+                <!-- #newSerial 用来关联标题对应的面板 -->
+                <li><a href="#newSerial" class="active">新增连载</a></li>
+                <li><a href="#newFinish">新增完结</a></li>
+                <li><a href="#pushSerial">推送连载</a></li>
+                <li><a href="#pushFinish">推送完结</a></li>
+            </ul>
+            <!-- 新增连载面板 -->
+            <div id="newSerial" style="display:block;">
+                <ul>
+                    <li class="col-xs-6">
+                        <a href="">
+                            <img src="http://ofv795nmp.bkt.clouddn.com/image10.jpg" alt="">
+                            <p>灵能百分百</p>
+                        </a>
+                    </li>
+                    <li class="col-xs-6">
+                        <a href="">
+                            <img src="http://ofv795nmp.bkt.clouddn.com/image12.jpg" alt="">
+                            <p>B-PROJECT～鼓动＊Ambitious～</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 新增完结面板 -->
+            <div id="newFinish">
+                <ul>
+                    <li class="col-xs-6">
+                        <a href="">
+                            <img src="http://ofv795nmp.bkt.clouddn.com/image15.jpg" alt="">
+                            <p>蓝海少女</p>
+                        </a>
+                    </li>
+                    <li class="col-xs-6">
+                        <a href="">
+                            <img src="http://ofv795nmp.bkt.clouddn.com/image14.jpg" alt="">
+                            <p>Regalia 三圣星</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 推送连载面板 -->
+            <div id="pushSerial">
+                 <ul>
+                    <li class="col-xs-6">
+                        <a href="">
+                            <img src="http://ofv795nmp.bkt.clouddn.com/image10.jpg" alt="">
+                            <p>灵能百分百</p>
+                        </a>
+                    </li>
+                    <li class="col-xs-6">
+                        <a href="">
+                            <img src="http://ofv795nmp.bkt.clouddn.com/image12.jpg" alt="">
+                            <p>B-PROJECT～鼓动＊Ambitious～</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 推送完结面板 -->
+            <div id="pushFinish">
+                 <ul>
+                    <li class="col-xs-6">
+                        <a href="">
+                            <img src="http://ofv795nmp.bkt.clouddn.com/image15.jpg" alt="">
+                            <p>蓝海少女</p>
+                        </a>
+                    </li>
+                    <li class="col-xs-6">
+                        <a href="">
+                            <img src="http://ofv795nmp.bkt.clouddn.com/image14.jpg" alt="">
+                            <p>Regalia 三圣星</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <!-- 左侧的导航菜单 -->
+    <div class="left-menu">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a href="#"></a>
+            </li>
+            <li class="list-group-item"><a href="#">连载动漫</a></li>
+            <li class="list-group-item"><a href="#">专题列表</a></li>
+            <li class="list-group-item"><a href="#">关于</a></li>
+        </ul>
+    </div>
+    <!-- 轮播图的每一张图片的模板 -->
+    <!--   <script type="text/html" id="slideTmp">
+            {{each list as value i}}
+            <div class="item">
+                <img src="{{value.img}}" alt="...">
+                <div class="carousel-caption">
+                    {{value.title}}
+                </div>
+            </div>
+        {{/each}}
+    </script> -->
+    <!-- 轮播图的每一张图片的模板 -->
+    <script type="text/html" id="slideTmp">
+        <% for(var i = 0; i < list.length;i++){%>
+            <div class="item">
+                <img src="<%=list[i].img%>" alt="...">
+                <div class="carousel-caption">
+                    <%= list[i].title %>
+                </div>
+            </div>
+            <%}%>
+    </script>
+    <!-- 轮播图的每一张图片的模板 -->
+    <script type="text/html" id="cartoonListTmp">
+        <% for(var i = 0; i < list.length;i++){%>
+            <li class="col-xs-6">
+                <a href="">
+                    <img src="images/cp1.jpg" alt="">
+                    <p>连载12集</p>
+                </a>
+            </li>
+            <%}%>
+    </script>
+    <!-- 引入bootstrap的js的时候依赖jquery所以先引入jquery -->
+    <!-- <script src="lib/jquery/jquery.js"></script> -->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <script src="lib/zepto/selector.js"></script>
+    <script src="lib/zepto/fx.js"></script>
+    <script src="lib/zepto/touch.js"></script>
+    <!-- <script src="lib/bootstrap/js/bootstrap.js"></script> -->
+    <!-- 简洁语法的包 -->
+    <!-- <script src="js/template.js"></script> -->
+    <!-- 原生语法的包 -->
+    <script src="js/template-native.js"></script>
+    <script src="js/index-native.js"></script>
+</body>
+
+</html>
